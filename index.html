@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The everything app | Careem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1a3da58247.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Noto+Sans+JP:wght@200&family=Rubik:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Merriweather+Sans:wght@600&family=Noto+Sans+JP:wght@200&family=Rubik:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./images/careem-app.png" type="image/x-icon">
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+
+    .bg-body-tertiary {
+        --bs-bg-opacity: 0
+    }
+
+    .navbar {
+        --bs-navbar-padding-y: 0.5rem;
+        --bs-navbar-brand-margin-end: 8rem;
+        --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 1);
+        --bs-navbar-nav-link-padding-x: 0.8rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.87em;
+
+    }
+
+    .nav-link {
+        padding: 0 10px;
+        font-size: 1em;
+        font-weight: 600;
+
+
+    }
+
+    .navbar-collapse {
+        padding-left: 5vw;
+        padding-right: 3vw;
+        font-weight: 600;
+    }
+
+    .container-fluid {
+        --bs-gutter-x: 3rem;
+        flex-wrap: inherit;
+
+    }
+
+    a.navlink {
+        padding-left: 10px;
+        padding-right: 10px;
+
+
+    }
+
+    .btn {
+        background-color: rgb(0, 235, 121);
+        color: black;
+        border: 2px solid rgb(0, 235, 121);
+        font-weight: 600;
+    }
+
+    .body {
+        font-family: Inter, sans-serif;
+        /* font-size: 1.5em; */
+    }
+
+    video {
+        border-radius: 3em;
+        padding: 1.5vw;
+        height: 10%;
+        width: 100%;
+    }
+
+    .cards {
+        display: flex;
+        width: 100%;
+        height:35vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        gap: 3vw;
+    }
+
+    .first {
+        background-color: rgb(56, 55, 228);
+        flex: 1;
+        border-radius: 1rem;
+        height: 30vw;
+        padding: 12px 11.5px;
+        color: white;
+
+    }
+    .first li a{
+        color: white;
+    }
+
+    
+
+    h2 {
+        font-family: 'Merriweather Sans', sans-serif;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-family: 'Rubik', sans-serif;
+        font-size: 3vw;
+        font-weight: 700;
+        
+
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .cards li {
+        font-family: 'Merriweather Sans', sans-serif;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-family: 'Rubik', sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+        
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+    .second {
+        background-color: rgb(210, 255, 213);
+        flex: 1;
+        border-radius: 1rem;
+        height: 30vw;
+        padding: 12px 11.5px;
+        color: rgb(3, 37, 3);
+
+    }
+    .second li a{
+        color: rgb(3, 37, 3);
+
+    }
+
+    .third {
+        background-color: rgb(127, 95, 250);
+        flex: 1;
+        border-radius: 1rem;
+        height: 30vw;
+        padding: 12px 11.5px;
+        color:#d6ffea;
+    }
+    .third li a{
+        color:#d6ffea;
+    }
+
+    .fourth {
+        background-color: rgb(0, 25, 66);
+        flex: 1;
+        border-radius: 1rem;
+        height: 30vw;
+        padding: 12px 11.5px;
+        color: white;
+    }
+    .fourth li a{
+        color: white; 
+    }
+
+
+
+    .carousel-slide {
+        width: 100%;
+
+    }
+
+    .carousel-inner {
+        margin: 5em 1em 7em 1em;
+        width: auto;
+        border-radius: 1em;
+        background: linear-gradient(100.88deg, #00493e 29.03%, #00e784 154.38%);
+        height: 20vw;
+
+    }
+
+
+    .img-font {
+        font-size: 2.5vw;
+        width: 50vw;
+        color: white;
+        position: relative;
+        left: 2vw;
+        top: 1vw;
+
+
+
+    }
+
+    .img-font img {
+        width: 15vw;
+        margin: 1em 0;
+
+    }
+
+    .big {
+
+        position: absolute;
+        left: 70vw;
+        top: 2vw;
+        width: 20vw;
+
+
+    }
+
+    .About,
+    .eng {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 13vw;
+        width: auto;
+
+    }
+
+    .about-us,
+    .engineering {
+        position: relative;
+        left: 5vw;
+        width: 40vw;
+        text-align: left;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+
+    }
+
+    .about-us h3 {
+        font-size: 2.7vw;
+        font-weight: bold;
+    }
+
+    .about-us p {
+        margin: 1em 0;
+
+    }
+
+    .About img {
+        width: 40vw;
+    }
+
+    .eng img {
+        width: 40vw;
+    }
+
+    .captains img {
+        width: 38vw;
+        margin-left: 4vw;
+    }
+
+    .captains {
+        display: flex;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        height: 45vw;
+        margin: 4em 0;
+        background-image: url("./images/bg-cliped-our-blog.png");
+        background-repeat: repeat;
+        background-size: cover;
+        gap: 19vw;
+    }
+
+    .btn-light {
+        background-color: aliceblue;
+        border-color: aliceblue;
+    }
+
+    .captain-info {
+        position: relative;
+        right: 4vw;
+        width: 35vw;
+        text-align: left;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .captain-info h3 {
+        font-size: 2.7vw;
+        font-weight: bold;
+    }
+
+    .captain-info p {
+        margin: 1em 0;
+    }
+
+    .engineering h3 {
+        font-size: 2.7vw;
+        font-weight: bold;
+    }
+
+    .engineering p {
+        margin: 1em 0;
+    }
+
+    .social {
+        display: flex;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 16vw;
+        margin: 8vw 0;
+    }
+
+    .social-impact {
+        position: relative;
+        right: 4vw;
+        width: 50vw;
+        text-align: left;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .social-impact h3 {
+        font-size: 2.7vw;
+        font-weight: bold;
+    }
+
+    .social-impact p {
+        margin: 1em 0;
+    }
+
+    .social img {
+        width: 38vw;
+        margin-left: 6vw;
+
+    }
+
+    .blog {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: 70vw;
+        margin: 4vw 0;
+        background-image: url("./images/bg-cliped-our-blog.png");
+        background-repeat: repeat;
+        background-size: cover;
+        box-sizing: border-box;
+
+
+
+
+    }
+
+    .head-blog {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        color: black;
+        gap: 10vw;
+        height: 10vw;
+        width: auto;
+        padding: 0 3.5vw;
+        position: relative;
+        top: 2vw;
+        /* background-color: #959aa3; */
+    }
+
+    .blog h3 {
+        font-size: 3vw;
+        font-weight: bold;
+        font-family: 'Inter', sans-serif
+    }
+
+    .icon-link {
+        font-size: 1.2em;
+        color: black;
+    }
+
+    .flex-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        max-width: 100%;
+        overflow: auto;
+    }
+
+    .card {
+        flex: 1;
+        max-width: calc(50% - 1em);
+        min-width: 200px;
+        height: 55vw;
+        background-color: transparent;
+        border: none;
+    }
+
+
+    .full {
+        display: flex;
+        flex-direction: row;
+        gap: 3vw;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        padding: 3em 0;
+        color: black;
+        max-width: 100%;
+    }
+
+    .careem-foot {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1em;
+        gap: 1em;
+        flex: 1;
+
+    }
+
+    .services-foot,
+    .partners-foot,
+    .team-foot,
+    .about-foot,
+    .uae-foot {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        text-align: left;
+        flex: 1;
+
+    }
+
+    .full h5 {
+        margin-bottom: 1em;
+        font-weight: bold;
+        color: #02201b;
+    }
+
+    .foot-end {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 0.9em;
+        padding-bottom: 2em;
+        color: black;
+    }
+
+    .privacy {
+        display: flex;
+        gap: 0.5em;
+        color: black;
+    }
+
+    footer a {
+        color: black;
+    }
+
+    footer a:hover {
+        transition: all .4s ease-out;
+        color: #00e784;
+        text-decoration-line: underline;
+    }
+    .nav-item a:hover{
+        transition: all .2s ease-out;
+        color: #00e784;
+        text-decoration-line: underline;
+    }
+    @media (max-width:1100px) {
+        .full{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .careem-foot,.icons{
+            order: 1;
+            text-align: center;
+        }
+        .uae-foot{
+            order: 1;
+            text-align: center;
+        }
+        .services-foot,.partners-foot,.privacy{
+            order: 2;
+            text-align: center;
+        }
+        
+        .team-foot,.about-foot,.copyrights{
+            order: 3;
+            text-align: center;
+        }
+        .foot-end{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:2em;
+        }
+        
+        
+    }
+    @media (max-width:766px) {
+        .About,.eng,.social{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:1em;
+        }
+        .About img,.eng img,.social img{
+            order: 1;
+            width: 70%;
+        }
+        .about-us,.engineering{
+            order: 2;
+            width: 72%;
+            text-align: left;
+        }
+        .about-us p,.engineering p{
+            width: 90%;
+            font-size: 1em;
+        }
+        .captains{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:1em;
+            height: 110vw;
+        }
+        .captains img{
+            order: 1;
+            width: 70%;
+        }
+        .captain-info p,.social-impact p{
+            width: 110%;
+            font-size: 1em;
+            
+        }
+        .captain-info,.social-impact{
+            order: 2;
+            width: 62%;
+            padding-left: 2.5em;
+            
+        }
+
+        
+    }
+
+
+</style>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="./images/Careem_logo_new_2023.png" width="125" height="26.09">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Partners</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Careem Plus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" type="submit">Download the app</button>
+
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false"> <i class="fa-solid fa-globe"
+                            style="color: #959aa3;"></i>&nbsp;English</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                    </ul>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="video">
+        <video autoplay="autoplay" playsinloop="" loop="loop" muted="muted">
+            <source
+                src="https://upload-cdn.careem.com/2023_05_05_Careem_New_Brand_Video_Cutdown_04_1920_X1080_Online_Mix_851c26c68a.mp4">
+        </video>
+    </div>
+    <div class="cards">
+        <div class="first">
+            <h2>Go<br> anywhere</h2>
+            <ul>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Rides</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Taxi</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Bikes</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        CarRental</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        SchoolRides</a></li>
+            </ul>
+        </div>
+        <div class="second">
+            <h2>Eat<br> anytime</h2>
+            <ul>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Food</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        DineOut</a></li>
+
+            </ul>
+        </div>
+        <div class="third">
+            <h2>Go<br> anywhere</h2>
+            <ul>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Rides</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Taxi</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Bikes</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        CarRental</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        SchoolRides</a></li>
+            </ul>
+        </div>
+        <div class="fourth">
+            <h2>Go<br> anywhere</h2>
+            <ul>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Rides</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Taxi</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        Bikes</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        CarRental</a></li>
+                <li><a href="#"><img src="./images/careem-black-logo-icon-hd-png-11663602196phrhnvfg0c.png" width="10%">
+                        SchoolRides</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <a href="#">
+                <div class="carousel-item active">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Enjoy Free Delivery on Food</p>
+                    </div>
+                    <img class="big" src="./images/cplus_rebranded_8_5c9c438c6c.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Enjoy Free Delivery on Quik Groceries</p>
+                    </div>
+                    <img class="big" src="./images/basket.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Get Upto 30% Off On Dine-Out</p>
+                    </div>
+                    <img class="big" src="./images/food.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Get 10% Off on Laundry</p>
+                    </div>
+                    <img class="big" src="./images/washing.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Get 20% Off on Home-Cleaning</p>
+                    </div>
+                    <img class="big" src="./images/broom.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Get Unlimited Free 45-mins Bike Rides</p>
+                    </div>
+                    <img class="big" src="./images/cycle.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Get priority support from our top agents</p>
+                    </div>
+                    <img class="big" src="./images/mobile.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Get instant 10% Back On Hala Taxi And Rides</p>
+                    </div>
+                    <img class="big" src="./images/car.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+            <a href="#">
+                <div class="carousel-item">
+                    <div class="img-font">
+                        <img src="./images/careem-pic.png">
+                        <p>Most Members Save AED 200+ Every Month </p>
+                    </div>
+                    <img class="big" src="./images/hand-mob.png" class="d-block" alt="Delivery">
+                </div>
+            </a>
+        </div>
+    </div>
+    <section class="About">
+        <div class="about-us">
+            <h3>About Us</h3>
+            <p>Careem’s purpose is to simplify and improve the lives of people and build an awesome organisation that
+                inspires.<br> Learn more about our purpose, people and services.</p>
+            <button type="button" class="btn btn-success">Read more</button>
+        </div>
+        <img src="./images/office.png">
+    </section>
+    <section class="captains">
+        <img src="./images/captain.png">
+        <div class="captain-info">
+            <h3>Captains</h3>
+            <p>Drive with Careem and earn with every ride. Choose your own hours, enjoy amazing Captain rewards and get
+                professional training.</p>
+            <button type="button" class="btn btn-light">Read more</button>
+        </div>
+    </section>
+    <section class="eng">
+        <div class="engineering">
+            <h3>Engineering at Careem</h3>
+            <p>Careem is creating cutting-edge technology every day across five tech sites in Europe and the MENAP
+                region, in a mission to build a lasting tech institution that inspires.</p>
+            <button type="button" class="btn btn-success">Read more</button>
+        </div>
+        <img src="./images/Engineering.png">
+    </section>
+    <section class="social">
+        <img src="./images/Our_social_impact.png">
+        <div class="social-impact">
+            <h3>Our social impact</h3>
+            <p>We believe deeply in driving social and economic progress across the region. We use our app to connect
+                customers to the communities that need the most support.</p>
+            <button type="button" class="btn btn-success">Read more</button>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="head-blog">
+            <h3>Our blog</h3>
+            <a class="icon-link" href="#">
+                View all
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="flex-card">
+            <div class="card" style="width: 25%;">
+                <img src="./images/stanford.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Stanford MBA students visit Careem</h5>
+                    <p class="card-text">The aim was to help them learn more about Careem’s growth and adaptability to
+                        regional needs and requirements, along with the entrepreneurial environment in the region.</p>
+                    <a href="#" class="btn btn-light">Read more</a>
+                </div>
+            </div>
+            <div class="card" style="width: 25%;">
+                <img src="./images/ai.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">
+                        3 ways our software engineers use AI in their daily work</h5>
+                    <p class="card-text">It’s no secret that the topic of AI has taken over the digital space over the
+                        past few months, especially after the launch of ChatGPT.</p>
+                    <a href="#" class="btn btn-light">Read More</a>
+                </div>
+            </div>
+            <div class="card" style="width: 25%;">
+                <img src="./images/chapter-3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;"> Careem: Chapter 3</h5>
+                    <p class="card-text">Nearly 11 years ago, we started Careem with a desire to build something big and
+                        meaningful. On the one hand, the success of Careem and its impact on our ecosystem has exceeded
+                        our wildest imaginations.</p>
+                    <a href="#" class="btn btn-light">Read more</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="full">
+            <div class="careem-foot">
+                <a href="#"><img src="./images/Careem_logo_new_2023.png" width="125" height="26.09"
+                        style="margin-bottom:1em;"></a>
+                <a href="#"><img src="./images/app-store.webp" width="125" height="35.09"></a>
+                <a href="#"><img src="./images/google-play.webp" width="125" height="35.09"></a>
+                <a href="#"><img src="./images/apk-download.webp" width="125" height="35.09"></a>
+            </div>
+            <div class="services-foot">
+                <h5>Services</h5>
+                <a href="#">Go</a>
+                <a href="#">Eat</a>
+                <a href="#">Get</a>
+                <a href="#">Pay</a>
+                <a href="#">Careem Plus</a>
+            </div>
+            <div class="partners-foot">
+                <h5>Partners</h5>
+                <a href="#">Corporate Packages</a>
+                <a href="#">Restaurant Delivery</a>
+                <a href="#">B2B Delivery</a>
+                <a href="#">Pay Merchant Solutions</a>
+
+            </div>
+            <div class="team-foot">
+                <h5>Join our team</h5>
+                <a href="#">About Us</a>
+                <a href="#">Engineering at careem</a>
+                <a href="#">Careers</a>
+                <a href="#">Explore open roles</a>
+                <a href="#">Why Careem </a>
+            </div>
+            <div class="about-foot">
+                <h5>About-Us</h5>
+                <a href="#">Our social impact</a>
+                <a href="#">Information Security</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="uae-foot">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false"> <i class="fa-solid fa-location-dot"
+                        style="color: #959aa3;"></i></i>&nbsp;&nbsp;U.A.E</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false"> <i class="fa-solid fa-globe"
+                        style="color: #959aa3;"></i>&nbsp;&nbsp;English</a>
+                <a href="#"><i class="fa-regular fa-circle-question"></i>&nbsp;&nbsp;Help Center</a>
+                <a href="#"><i class="fa-regular fa-circle-question"></i>&nbsp;&nbsp;Book Your Ride</a>
+
+
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="foot-end">
+            <div class="copyrights">
+                <span> All rights reserved. Careem © 2023</span>
+            </div>
+            <div class="privacy">
+                <a href="#">Terms of service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Code of Conduct</a>
+                <a href="#">Third party Code of Conduct</a>
+            </div>
+            <div class="icons">
+                <a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #080d17;"></i></a>
+                <a href="#"><i class="fa-brands fa-square-twitter fa-2xl" style="color: #050c1a;"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin fa-2xl" style="color: #040c1a;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2xl" style="color: #050b15;"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
